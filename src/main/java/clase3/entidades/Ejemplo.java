@@ -1,5 +1,7 @@
 package clase3.entidades;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,6 +14,7 @@ public class Ejemplo {
 		persona.tipoDocumento = TipoDocumento.DNI;
 		persona.nombre = "Arthur";
 		persona.apellido = "Mauricio";
+		persona.fechaCreacion = LocalDateTime.now();
 
 
 
