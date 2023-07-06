@@ -14,7 +14,7 @@ public class Ejemplo {
 		persona.tipoDocumento = TipoDocumento.DNI;
 		persona.nombre = "Arthur";
 		persona.apellido = "Mauricio";
-		persona.fechaCreacion = LocalDateTime.now();
+	
 
 
 
