@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Producto {
@@ -17,5 +19,12 @@ public class Producto {
 	String descripcion;
 	BigDecimal precio;
 	Integer stock;
+	
+	//asociacion
+	//relacion
+	//MARCA_ID INTEGER HACIA AL MARCA
+	//JoinColumn
+	@ManyToOne(optional = true)
+	Marca marca;
 
 }
