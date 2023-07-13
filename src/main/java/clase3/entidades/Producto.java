@@ -1,7 +1,11 @@
 package clase3.entidades;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,5 +21,9 @@ public class Producto {
 	String descripcion;
 	BigDecimal precio;
 	Integer stock;
+	
+	@ElementCollection
+	@Column (name = "url")
+	List<String> imagenes = new ArrayList<String>();
 
 }
