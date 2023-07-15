@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Producto {
@@ -22,8 +24,16 @@ public class Producto {
 	BigDecimal precio;
 	Integer stock;
 	
+
 	@ElementCollection
 	@Column (name = "url")
 	List<String> imagenes = new ArrayList<String>();
+
+	
+	//MARCA_ID INTEGER HACIA AL MARCA
+	//JoinColumn
+	@ManyToOne(optional = true)
+	Marca marca;
+
 
 }

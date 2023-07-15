@@ -7,49 +7,49 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-public class ProductoDao {
-
-  
-	public Producto save(Producto producto) {
+public class MarcaDao {
+	public Marca save(Marca marca) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
 
 		entityManager.getTransaction().begin();
-		entityManager.persist(producto);
+		entityManager.persist(marca);
 		entityManager.getTransaction().commit();
-		return producto;
+		entityManager.close();
+
+		return marca;
 
 	}
 
 	
 
-	public void delete(Producto producto) {
+	public void delete(Marca marca) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
 
 
 		entityManager.getTransaction().begin();
-		entityManager.remove(producto);
+		entityManager.remove(marca);
 		entityManager.getTransaction().commit();
 
 	}
-	public List<Producto> findAll(){
+	public List<Marca> findAll(){
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
 		
-		TypedQuery<Producto>  query = entityManager.createQuery("select p from Producto p", Producto.class);
+		TypedQuery<Marca>  query = entityManager.createQuery("select m from Marca m", Marca.class);
 		return query.getResultList();
 	}
 	
 
-	public Producto findById(Long id) {
+	public Marca findById(Long id) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
 
-		return entityManager.find(Producto.class, id);
+		return entityManager.find(Marca.class, id);
 
 	}
 
