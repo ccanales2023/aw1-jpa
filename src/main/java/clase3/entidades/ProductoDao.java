@@ -13,7 +13,7 @@ public class ProductoDao {
 	public Producto save(Producto producto) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
+		EntityManager entityManager = entityManagerFactory.createEntityManager();	
 
 		entityManager.getTransaction().begin();
 		entityManager.persist(producto);
@@ -27,7 +27,7 @@ public class ProductoDao {
 	public void delete(Producto producto) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
+		EntityManager entityManager = entityManagerFactory.createEntityManager();	
 
 
 		entityManager.getTransaction().begin();
@@ -37,7 +37,7 @@ public class ProductoDao {
 	}
 	public List<Producto> findAll(){
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
+		EntityManager entityManager = entityManagerFactory.createEntityManager();	
 		
 		TypedQuery<Producto>  query = entityManager.createQuery("select p from Producto p", Producto.class);
 		return query.getResultList();
@@ -47,7 +47,7 @@ public class ProductoDao {
 	public Producto findById(Long id) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();	// CRUD
+		EntityManager entityManager = entityManagerFactory.createEntityManager();	
 
 		return entityManager.find(Producto.class, id);
 
