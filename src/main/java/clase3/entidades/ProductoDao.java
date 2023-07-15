@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 public class ProductoDao {
+
+  
 	public Producto save(Producto producto) {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("farmaciadb");
@@ -16,7 +18,6 @@ public class ProductoDao {
 		entityManager.getTransaction().begin();
 		entityManager.persist(producto);
 		entityManager.getTransaction().commit();
-		entityManager.close();
 		return producto;
 
 	}
@@ -51,6 +52,5 @@ public class ProductoDao {
 		return entityManager.find(Producto.class, id);
 
 	}
-
 
 }
