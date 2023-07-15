@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name= "tbl_persona")
@@ -27,6 +28,9 @@ public class Persona {
 	
 	@CreationTimestamp
 	 LocalDateTime fechaCreacion;
+	
+	@UpdateTimestamp
+	 LocalDateTime fechaActualizacion;
 	
 	String direccion;
 	String calle;

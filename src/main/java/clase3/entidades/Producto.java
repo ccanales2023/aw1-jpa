@@ -1,6 +1,7 @@
 package clase3.entidades;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 @Entity
@@ -34,6 +38,12 @@ public class Producto {
 	//JoinColumn
 	@ManyToOne(optional = true)
 	Marca marca;
+	
+	@CreationTimestamp
+	 LocalDateTime fechaCreacion;
+	
+	@UpdateTimestamp
+	 LocalDateTime fechaActualizacion;
 
 
 }
